@@ -18,8 +18,14 @@ rust_lib_dir = os.path.join(project_dir, "rust-lib")
 rust_target_dir = os.path.join(project_dir, "target")
 
 # Determine build mode (debug or release)
-BUILD_TYPE = env.get("BUILD_TYPE", "release")
-rust_profile = "release" if BUILD_TYPE == "release" else "debug"
+# Check both BUILD_TYPE and common PlatformIO environment variables
+pioenv = env.get("PIOENV", "")
+build_type = env.get("BUILD_TYPE", "")
+
+# Default to release unless explicitly in a debug environment
+rust_profile = "release"
+if "debug" in pioenv.lower() or "debug" in build_type.lower():
+    rust_profile = "debug"
 
 def build_rust_library():
     """Build the Rust library"""

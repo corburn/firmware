@@ -7,11 +7,13 @@ use std::ffi::CString;
 use std::os::raw::c_char;
 
 /// Example function that can be called from C++
-/// Returns a greeting message
+/// Returns a greeting message, or null on allocation failure
 #[no_mangle]
 pub extern "C" fn rust_hello() -> *const c_char {
-    let message = CString::new("Hello from Rust!").unwrap();
-    message.into_raw()
+    match CString::new("Hello from Rust!") {
+        Ok(message) => message.into_raw(),
+        Err(_) => std::ptr::null(),
+    }
 }
 
 /// Free a string allocated by Rust

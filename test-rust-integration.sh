@@ -1,7 +1,7 @@
 #!/bin/bash
 # Test script to verify Rust integration
 
-set -e
+set -euo pipefail
 
 echo "================================"
 echo "Rust Integration Verification"

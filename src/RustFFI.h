@@ -55,8 +55,13 @@ public:
         return *this;
     }
     
-    const char* c_str() const { return ptr; }
-    std::string to_string() const { return ptr ? std::string(ptr) : ""; }
+    const char* c_str() const { 
+        return ptr ? ptr : ""; 
+    }
+    
+    std::string to_string() const { 
+        return ptr ? std::string(ptr) : ""; 
+    }
 };
 
 /**
