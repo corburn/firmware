@@ -27,6 +27,8 @@ This repository contains the official device firmware for Meshtastic, an open-so
 
 Meshtastic enables text messaging, location sharing, and telemetry over a decentralized mesh network, making it ideal for outdoor adventures, emergency preparedness, and remote operations.
 
+**Note**: The firmware is being gradually enhanced with Rust components for improved safety and performance. See [RUST_MIGRATION.md](RUST_MIGRATION.md) for details on the Rust integration.
+
 ### Get Started
 
 - 🔧 **[Building Instructions](https://meshtastic.org/docs/development/firmware/build)** – Learn how to compile the firmware from source.

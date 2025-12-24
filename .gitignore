@@ -1,3 +1,10 @@
+# Rust build artifacts
+/target/
+/rust-lib/target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
+
 .pio
 pio
 pio.tar
